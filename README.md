@@ -1,5 +1,5 @@
-# pmf
-Process model forecasting from time series
+# Process model forecasting
+Process Model Forecasting Using Time Series Analysis of Event Sequence Data
 
 ## About
 Process analytics is the field focusing on predictions for individual process instances or overall process models. At the instance level, various novel techniques have been recently devised, tackling next activity, remaining time, and outcome prediction. At the model level, there is a notable void. It is the ambition of this paper to fill this gap. To this end, we develop a technique to forecast the entire process model from historical event data. A forecasted model is a will-be process model representing a probable future state of the overall process. Such a forecast helps to investigate the consequences of drift and emerging bottlenecks. 
