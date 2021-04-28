@@ -12,14 +12,18 @@ The implementation is based on Python and uses the following packages:
 - [statsmodels](https://www.statsmodels.org/stable/index.html)
 - [scikit-learn](https://scikit-learn.org/stable/)
 - [numpy](https://numpy.org/)
-- [arch packages](https://pypi.org/project/arch/)
-- [entropia](https://github.com/jbpt/codebase/tree/master/jbpt-pm/entropia): make sure to include jbpt-pm-entropia-1.6.jar as well as the lib directory next to the python code
+- [arch package](https://pypi.org/project/arch/)
+- [entropia](https://github.com/jbpt/codebase/tree/master/jbpt-pm/entropia): make sure to include jbpt-pm-entropia-1.6.jar as well as the lib directory next to the Python code as this is used to calculate the entropic relevance
 
-## Parameters
--dataset (e.g. 'rtfmp'): should be the name of an included .xes file
--agg_type ('equisize' or 'equitemp'): aggregation used to collect events in intervals (equisize: the same number of events in every intervals, equisize: every intervals has the same timespan)
--no_pairs (integer)
--horizon (integer): number of intervals forecasted, i.e., the forecasting horizon
--no_intervals (integer): number of intervals (out of all the intervals) used for the whole dataset (length of training set = no_intervals - horizon)
--no_folds (integer): number of folds used for cross-validation
--no_intervals_all (integer): number of intervals 
+## Parameters and use
+You can use the main Python file create_dfg_forecasts.py with the following parameters:
+
+- dataset (e.g. 'rtfmp'): should be the name of an included .xes file
+- agg_type ('equisize' or 'equitemp'): aggregation used to collect events in intervals (equisize: the same number of events in every intervals, equisize: every intervals has the same timespan)
+- no_pairs (integer)
+- horizon (integer): number of intervals forecasted, i.e., the forecasting horizon
+- no_intervals_all (integer): number of intervals in whic the log will be split
+- no_intervals (integer): number of intervals (out of all the intervals) used for the whole dataset (length of training set = no_intervals - horizon)
+- no_folds (integer): number of folds used for cross-validation
+
+The generated outcome (.csv file) will include the cosine distance, root mean square error and entropic relevance of both the forecasted and actual DFGs.
