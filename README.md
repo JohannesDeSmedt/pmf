@@ -15,12 +15,23 @@ The implementation is based on Python and uses the following packages:
 - [arch package](https://pypi.org/project/arch/)
 - [entropia](https://github.com/jbpt/codebase/tree/master/jbpt-pm/entropia): make sure to include jbpt-pm-entropia-1.6.jar as well as the lib directory next to the Python code as this is used to calculate the entropic relevance
 
+## Datasets
+We used 6 datasets, as-is from the following locations:
+- [RTFMP](https://doi.org/10.4121/uuid:270fd440-1057-4fb9-89a9-b699b47990f5)
+- [BPI12](https://doi.org/10.4121/uuid:3926db30-f712-4394-aebc-75976070e91f)
+- [BPI17](https://doi.org/10.4121/uuid:5f3067df-f10b-45da-b98b-86ae4c7a310b)
+- [BPI18](https://doi.org/10.4121/uuid:3301445f-95e8-4ff0-98a4-901f1f204972)
+- [Sepsis](https://doi.org/10.4121/uuid:915d2bfb-7e84-49ad-a286-dc35f063a460)
+- [Italian](https://doi.org/10.4121/uuid:0c60edf1-6f83-4e75-9367-4c63b3e9d5bb)
+
+Note that the ones included in [datasets](/datasets) need to be unzipped.
+
 ## Parameters and use
 You can use the main Python file create_dfg_forecasts.py with the following parameters:
 
 - dataset (e.g. 'rtfmp'): should be the name of an included .xes file
 - agg_type ('equisize' or 'equitemp'): aggregation used to collect events in intervals (equisize: the same number of events in every intervals, equisize: every intervals has the same timespan)
-- no_pairs (integer)
+- no_pairs (integer): use to limit to the #no_pairs most frequent DF pairs. Use 0 to use all activity pairs.
 - horizon (integer): number of intervals forecasted, i.e., the forecasting horizon
 - no_intervals_all (integer): number of intervals in whic the log will be split
 - no_intervals (integer): number of intervals (out of all the intervals) used for the whole dataset (length of training set = no_intervals - horizon)
