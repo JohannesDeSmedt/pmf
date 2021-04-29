@@ -27,7 +27,7 @@ We used 6 datasets, as-is from the following locations:
 Note that the ones included in [datasets](/datasets) need to be unzipped.
 
 ## Parameters and use
-You can use the main Python file create_dfg_forecasts.py with the following parameters:
+You can use the main Python file [create_dfg_forecasts.py](/python/create_dfg_forecasts.py) with the following parameters:
 
 - dataset (e.g. 'rtfmp'): should be the name of an included .xes file
 - agg_type ('equisize' or 'equitemp'): aggregation used to collect events in intervals (equisize: the same number of events in every intervals, equisize: every intervals has the same timespan)
